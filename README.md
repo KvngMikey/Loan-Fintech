@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+## SIMPLIFIED LOAN MANAGEMENT APP
+This is a simple loan management app built with React, TypeScript, Vite, TailwindCSS, and React Router. The application displays a homepage with user account details, active loan, and recent transactions history. It also includes routing for loan history and loan request features.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Setup Instructions**
+### Prerequisites
+Node.js (version 18 or higher recommended)
+npm package manager
 
-Currently, two official plugins are available:
+### Clone the repository
+git clone <repository-url>
+cd <repository-folder>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+### Start development server
+npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Run unit test
+npm run test
 
-- Configure the top-level `parserOptions` property like this:
+**Approach**
+### Project Setup
+Used Vite for a fast, lightweight development environment.
+Configured TypeScript for strong type-checking and better code maintainability.
+Added TailwindCSS for utility-first styling and rapid UI development.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Routing
+Configured React Router in index.tsx to handle navigation between pages.
+Defined routes for the Homepage and Loan History page.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Component Design
+Created reusable, modular components in the components folder.
+Focused on separation of concerns and reusable UI components (e.g., Header, Transactions, LoanDetailsModal).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Homepage
+Displays user data, including account balance, current loan, and a recent transaction table.
+Includes CTA buttons for viewing loan details and loan history.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Loan History Page
+Displays a table with loan history data.
+Includes a button for requesting a new loan.
+
+### State Management
+Used React's useState and useEffect hooks for local state and side effects (e.g., fetching user data).
+Passed props to child components to maintain a clean and predictable data flow.
+
+### Testing
+Wrote unit tests using Jest and React Testing Library.
+Covered key functionalities, such as:
+Rendering components with mock data.
+Verifying button clicks trigger appropriate actions (e.g., opening modals, navigating routes).
+Ensuring API calls fetch the expected data.
